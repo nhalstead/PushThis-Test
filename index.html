@@ -5,19 +5,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script>
         // Connect to Pushthis Network
-        var pushthis = io.connect('//na.pushthis.io', {
+        var pushthis = io.connect('https://na.pushthis.io', {
           transports: ['websocket'],
           query: "key=gCNJMNTCEuywTi5T"
         });
 
-        // Let us know what channel you'd like to be on, 
+	   pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
+			   pushthis.on('info', function(data){
+			   console.log(data);
+		});
+        pushthis.on('helpMePush-This', function(data){
+            console.log(data);
+        });
+		
+        /* Let us know what channel you'd like to be on, 
         pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
+		pushthis.on('helpMePush-This', function(data){
+			console.log(data);
+		});*/
+		/*
 		pushthis.on('demo', function(data){
 			console.log(data)
 		});
-		pushthis.on('ping', function(data){
-			alert("PONG!");
-		});
+		pushthis.on('hello', function(data){
+			alert("HELLO FROM THE OTHER SIDE!");
+		});*/
     </script>
   </head>
   <body>
