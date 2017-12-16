@@ -17,6 +17,9 @@
         pushthis.on('helpMePush-This', function(data){
             console.log(data);
         });
+        pushthis.on('info', function(data){
+            console.log(data);
+        });
 		
         /* Let us know what channel you'd like to be on, 
         pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
