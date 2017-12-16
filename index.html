@@ -10,10 +10,7 @@
           query: "key=gCNJMNTCEuywTi5T"
         });
 
-	   pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
-			   pushthis.on('info', function(data){
-			   console.log(data);
-		});
+		pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
         pushthis.on('helpMePush-This', function(data){
             console.log(data);
         });
