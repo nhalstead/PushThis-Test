@@ -12,6 +12,12 @@
 
         // Let us know what channel you'd like to be on, 
         pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
+		pushthis.on('demo', function(data){
+			console.log(data)
+		});
+		pushthis.on('ping', function(data){
+			alert("PONG!");
+		});
     </script>
   </head>
   <body>
