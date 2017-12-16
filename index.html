@@ -18,6 +18,16 @@
             console.log(data);
         });
 		
+        pushthis.on('demo', function(data){
+            console.log(data);
+        });
+        pushthis.on('blah', function(data){
+            console.log(data);
+        });
+        pushthis.on('touser', function(data){
+            alert(data);
+        });
+		
         /* Let us know what channel you'd like to be on, 
         pushthis.emit('join', { channel: 'pushthisNetwork', presence: true, authorize: false});
 		pushthis.on('helpMePush-This', function(data){
